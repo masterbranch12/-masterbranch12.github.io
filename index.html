@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R6TCGNXDC"></script>
@@ -11,9 +11,11 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
   gtag('js', new Date());
   gtag('config', 'G-6R6TCGNXDC');}
 </script>
+<script src="./js/getLocale.js"></script>
+<script src="./js/languages.js"></script>
     <meta charset="utf-8" />
     <meta property="og:title" content="NearStuff" />
-    <meta property="og:image" content="https://nearstuff.com/assets/LogoSvg.svg" />
+    <meta property="og:image" content="%PUBLIC_URL%/assets/LogoSvg.svg" />
     <meta
       property="og:description"
       content="Be near events, business, everything, everywhere!"
@@ -23,7 +25,7 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
       name="twitter:description"
       content="Be near events, business, everything, everywhere!"
     />
-    <link rel="icon" href="https://nearstuff.com/assets/LogoSvg.svg" />
+    <link rel="icon" href="%PUBLIC_URL%/assets/LogoSvg.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="description" content="Be near events, business, everything, everywhere!" />
@@ -33,13 +35,13 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
       href="./font-awesome-4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" type="text/css" href="./IconLogo/nearstuff.css" />
-    <!--<link rel="manifest" href="UBLIC_URL%/manifest.json" />-->
+    <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
     <link rel="stylesheet" type="text/css" href="./styles.css" />
     <script src="./js/imageModals.js"></script>
     <title>NearStuff</title>
   </head>
 
-  <body>
+  <body onload="languages()">
     <div id="modal01" class="modal" onclick="this.style.display='none'">
       <span class="close">&times;</span>
       <img class="modal-content" id="img01" />
@@ -48,12 +50,12 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
 
     <div id="topnav">
       <a id="anchorLogo" href="#start"
-        ><img src="https://nearstuff.com/assets/LogoSvg.svg" alt="LogoNS"
+        ><img src="./assets/LogoSvg.svg" alt="LogoNS"
       /></a>
       <nav id="myLinks">
-        <a href="#you">For You</a>
-        <a href="#business">For Business</a>
-        <a href="#events">For Events</a>
+        <a href="#you" id="for_you_nav">For You</a>
+        <a href="#business" id="business_nav">For Business</a>
+        <a href="#events" id="events_nav">For Events</a>
          <!--<a href="#download">Download</a>-->
         <!--<a href="">Login</a>-->
       </nav>
@@ -70,15 +72,15 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
           id="neargif"
         />
         <div class="pagepart_text_container fadeIn">
-          <h1>Geo-Based Social Network</h1>
+          <h1 id="geoTitle">Geo-Based Social Network</h1>
           <div class="Text_container">
-            <p>What is more important to you?</p>
-            <p style="padding-top: 5vh">
+            <p id="more_important">What is more important to you?</p>
+            <p style="padding-top: 5vh" id="more_important_res">
               Connect and know about stuff that happens far far away from you,
               or stuff that is happening right now on your location?
             </p>
 
-            <p style="padding-top: 5vh">
+            <p style="padding-top: 5vh" id="ns_offer">
               <i
                 class="icon icon-Logo"
                 style="position: relative; left: 5px; top: 1.8px"
@@ -112,26 +114,18 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
         <div class="pagepart_text_container">
           <img src="./assets/NeaforYou.png" width="250px" class="sectionTitle"/>
           
-          <p>The social part of the network presents posts from friends and public posts from people who are close to us. There is still the possibility of pulling someone else's post to our location, if it is interesting. The objective is to create a social filter in which posts near you, posts from friends, or interesting posts for someone close to you will be displayed.</p>
-        <p style="margin: 10px;">As basic functions, the network has the ability to share information, either in posts or through private chat between users. It also has customizable personal pages and a follower system.</p>
+          <p id="social_part_text">The social part of the network presents posts from friends and public posts from people who are close to us. There is still the possibility of pulling someone else's post to our location, if it is interesting. The objective is to create a social filter in which posts near you, posts from friends, or interesting posts for someone close to you will be displayed.</p>
+        <p style="margin: 10px;" id="social_part_text2">As basic functions, the network has the ability to share information, either in posts or through private chat between users. It also has customizable personal pages and a follower system.</p>
         </div>
       </div>
       <div class="pagepart scroll-snap-child" id="business">
         <video autoplay muted loop playsinline class="videoBackground">
           <source src="./assets/Places480.mp4" type="video/mp4">
         </video>
-        <!--<img
-          src="./assets/control_nonComercial.png"
-          alt="You Prints App & Features"
-          width="250px"
-          onclick="onClick(this)"
-          class="imgModal"
-          style="width: min(500px, 35vw)"
-        />-->
         <div class="pagepart_text_container">
           <img src="./assets/NearforBusiness.png" width="250px" class="sectionTitle"/>
-          <p>The social network will also have a part to integrate and connect standard users to the businesses they like so much. The aim is to implement mechanisms and tools to facilitate connections between users and improve the ecosystem we live in.</p>
-       <p style="margin: 10px;">This part is still under study and development.</p>
+          <p id="business_part_text">The social network will also have a part to integrate and connect standard users to the businesses they like so much. The aim is to implement mechanisms and tools to facilitate connections between users and improve the ecosystem we live in.</p>
+       <p id="business_part_text2" style="margin: 10px;">This part is still under study and development.</p>
       </div>
       </div>
       <div class="pagepart scroll-snap-child" id="events">
@@ -148,16 +142,16 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
         />-->
         <div class="pagepart_text_container">
           <img src="./assets/NearforEvents.png" width="250px" class="sectionTitle"/>
-          <p>Culture is important to all of us, since prehistoric times. And as such, the event component on a social network could not be neglected. Once again, the main objective is to facilitate contact and communication, through social tools.</p>
-        <p style="margin:10px">These tools are still being planned, to better meet users' expectations and needs.</p>
+          <p id="events_part_text">Culture is important to all of us, since prehistoric times. And as such, the event component on a social network could not be neglected. Once again, the main objective is to facilitate contact and communication, through social tools.</p>
+        <p id="events_part_text2" style="margin:10px">These tools are still being planned, to better meet users' expectations and needs.</p>
         </div>
       </div>
       <div class="pagepart" id="download">
        
        <div class="pagepart_text_container">
  
-          <h1>AVAILABLE SOON</h1>
-          <p> on Google Playstore and AppStore</p>
+          <h1 id="availableSoon_text">AVAILABLE SOON</h1>
+          <p id="availableSoon_text_stores"> on Google Playstore and AppStore</p>
           <div class="StoresLogos">
             <a >
               <img
@@ -176,8 +170,8 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
       </div>
       <div id="bottom" class="scroll-snap-child">
         <div id="bottomNav">
-          <a href="./termsandconditions/">Terms and Conditions</a>
-          <a href="./contacts/">Contact us</a>
+          <a id="terms_nav" href="./termsandconditions/">Terms and Conditions</a>
+          <a id="contacts_nav" href="./contacts/">Contact us</a>
         </div>
       </div>
     </div>
@@ -186,17 +180,17 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
           <header id="consentHeader"> 
                 Cookies
             </header> 
-          <p> 
+          <p id="cookies_notice"> 
             We use <a href="./cookies/">cookies</a> to make our site work well 
             for you and so we can continually improve it. 
             <br>The cookies that are necessary to  
-            keep the site functioning are always on 
+            keep the site functioning are always on. 
           </p> 
           <div class="buttons"> 
-              <button class="consentButton"> 
+              <button class="consentButton" id="accept_cookies_btn"> 
                     Accept Cookies 
                 </button> 
-              <button class="rejectButton"> 
+              <button class="rejectButton"  id="reject_cookies_btn"> 
                     Reject 
                 </button> 
           </div> 

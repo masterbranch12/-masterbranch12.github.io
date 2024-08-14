@@ -11,6 +11,8 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
   gtag('js', new Date());
   gtag('config', 'G-6R6TCGNXDC');}
 </script>
+<script src="../js/getLocale.js"></script>
+<script src="../js/languages.js"></script>
     <meta charset="utf-8" />
     <meta property="og:title" content="NearStuff" />
     <meta
@@ -38,7 +40,7 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
     <title>NearStuff</title>
   </head>
 
-  <body>
+  <body onload="languages()">
     <div id="modal01" class="modal" onclick="this.style.display='none'">
       <span class="close">&times;</span>
       <img class="modal-content" id="img01" />
@@ -50,9 +52,9 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
         ><img src="../assets/LogoSvg.svg" alt="LogoNS"
       /></a>
       <nav id="myLinks">
-        <a href="../#you">For You</a>
-        <a href="../#business">For Business</a>
-        <a href="../#events">For Events</a>
+        <a href="../#you" id="for_you_nav">For You</a>
+        <a href="../#business"  id="business_nav">For Business</a>
+        <a href="../#events" id="events_nav">For Events</a>
          <!--<a href="#download">Download</a>-->
         <!--<a href="">Login</a>-->
       </nav>
@@ -65,43 +67,43 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
         <div class="pagepart_text_container fadeIn">
           <h1>Cookies</h1>
           <div class="Text_container">
-            <p>
+            <p id="cookie_text1">
               Thank you for visiting nearstuff.com. This cookie policy applies to this website. We believe in a policy of transparency, and therefore, this policy provides detailed information on how and when we use cookies.</p>
-          <p style="margin-top: 10px;">A cookie is a small file placed on your device that enables NearStuff features. For example, cookies allow us to identify your device and help us improve our service.</p>
-        <p style="margin-top: 10px">NearStuff only uses analytical cookies, that is, cookies that allow us to identify the devices that enter the website, as well as their location and interaction time, for statistical purposes only. The cookies used are listed below.</p>    
+          <p style="margin-top: 10px;" id="cookie_text2">A cookie is a small file placed on your device that enables NearStuff features. For example, cookies allow us to identify your device and help us improve our service.</p>
+        <p style="margin-top: 10px"  id="cookie_text3">NearStuff only uses analytical cookies, that is, cookies that allow us to identify the devices that enter the website, as well as their location and interaction time, for statistical purposes only. The cookies used are listed below.</p>    
       
         <table style="margin-top: 10px; ">
           <tr>
-            <th>Provider</th>
-            <th>Cookie Name</th>
-            <th>Expiration</th>
-            <th>Description</th>
+            <th id="table_header1">Provider</th>
+            <th id="table_header2">Cookie Name</th>
+            <th id="table_header3">Expiration</th>
+            <th id="table_header4">Description</th>
           </tr>        
           <tr>   
             <td>NearStuff</td>
             <td>CookieConsentNS</td>
-            <td>2 years</td>
-            <td>Used to save cookie preferences.</td>
+            <td id="2years">2 years</td>
+            <td id="CookieConsentNS_des">Used to save cookie preferences.</td>
           </tr>
           <tr>   
             <td>Google Analytics</td>
             <td>_ga</td>
-            <td>2 years</td>
-            <td>Used to distinguish users.</td>
+            <td id="2years">2 years</td>
+            <td id="Google Analytics1_des">Used to distinguish users.</td>
           </tr>
           <tr>
             <td>Google Analytics</td>
             <td>_ga_container-id</td>
-            <td>2 years</td>
-            <td>Used to persist session state.</td>
+            <td id="2years">2 years</td>
+            <td id="Google Analytics2_des">Used to persist session state.</td>
           </tr>
         </table></div>
         </div>
       </div>
       <div id="bottom" class="scroll-snap-child">
         <div id="bottomNav">
-          <a href="">Terms and Conditions</a>
-          <a href="../contacts/">Contact us</a>
+          <a href="../termsandconditions/" id="terms_nav">Terms and Conditions</a>
+          <a href="../contacts/" id="contacts_nav">Contact us</a>
         </div>
       </div>
     </div>
@@ -110,17 +112,17 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
           <header id="consentHeader"> 
                 Cookies
             </header> 
-          <p> 
-            We use <a href="">cookies</a> to make our site work well 
-            for you and so we can continually improve it. 
-            <br>The cookies that are necessary to  
-            keep the site functioning are always on 
-          </p> 
+            <p id="cookies_notice"> 
+              We use <a href="./cookies/">cookies</a> to make our site work well 
+              for you and so we can continually improve it. 
+              <br>The cookies that are necessary to  
+              keep the site functioning are always on. 
+            </p> 
           <div class="buttons"> 
-              <button class="consentButton"> 
+              <button class="consentButton" id="accept_cookies_btn"> 
                     Accept Cookies 
                 </button> 
-              <button class="rejectButton"> 
+              <button class="rejectButton" id="reject_cookies_btn"> 
                     Reject 
                 </button> 
           </div> 

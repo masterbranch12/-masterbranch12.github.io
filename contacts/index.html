@@ -11,6 +11,8 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
   gtag('js', new Date());
   gtag('config', 'G-6R6TCGNXDC');}
 </script>
+<script src="../js/getLocale.js"></script>
+<script src="../js/languages.js"></script>
     <meta charset="utf-8" />
     <meta property="og:title" content="NearStuff" />
     <meta
@@ -38,7 +40,7 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
     <title>NearStuff</title>
   </head>
 
-  <body>
+  <body onload="languages()">
     <div id="modal01" class="modal" onclick="this.style.display='none'">
       <span class="close">&times;</span>
       <img class="modal-content" id="img01" />
@@ -50,9 +52,9 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
         ><img src="../assets/LogoSvg.svg" alt="LogoNS"
       /></a>
       <nav id="myLinks">
-        <a href="../#you">For You</a>
-        <a href="../#business">For Business</a>
-        <a href="../#events">For Events</a>
+        <a href="../#you" id="for_you_nav">For You</a>
+        <a href="../#business"  id="business_nav">For Business</a>
+        <a href="../#events" id="events_nav">For Events</a>
          <!--<a href="#download">Download</a>-->
         <!--<a href="">Login</a>-->
       </nav>
@@ -63,14 +65,14 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
     <div>
       <div class="pagepart scroll-snap-child" id="start">
         <div class="pagepart_text_container fadeIn">
-          <h1>Contacts</h1>
+          <h1 id="contact_title">Contacts</h1>
           <div class="Text_container form">
-            <p>We are interested in hearing your opinions and suggestions. Please leave your message.</p>
-            <form id="contactForm"><label for="name">Your name:</label>
+            <p id="contact_text1">We are interested in hearing your opinions and suggestions. Please leave your message.</p>
+            <form id="contactForm"><label for="name" id="name_label_form">Your name:</label>
               <input required id="name" type="text" name="name"/>
-              <label for="email">Your Email:</label>
+              <label for="email" id="email_label_form">Your Email:</label>
               <input required id="email" type="text" name="email"/>
-              <label for="message">Your Message:</label>
+              <label for="message" id="mssg_label_form">Your Message:</label>
               <textarea required id="message"  rows="8" cols="25" name="message"></textarea>
               <input id="submitbtn" type="submit" value="Submit" style="margin: 5px;width: 100px;background-color:#364657 ; ">
             </form>
@@ -79,8 +81,8 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
       </div>
       <div id="bottom" class="scroll-snap-child">
         <div id="bottomNav">
-          <a href="../termsandconditions">Terms and Conditions</a>
-          <a href="">Contact us</a>
+          <a  id="terms_nav" href="../termsandconditions">Terms and Conditions</a>
+          <a id="contacts_nav" href="">Contact us</a>
         </div>
       </div>
     </div>
@@ -89,17 +91,17 @@ if(document.cookie.indexOf("CookieConsentNS") !== -1){
           <header id="consentHeader"> 
                 Cookies
             </header> 
-          <p> 
+          <p id="cookies_notice"> 
             We use <a href="../cookies/">cookies</a> to make our site work well 
             for you and so we can continually improve it. 
             <br>The cookies that are necessary to  
             keep the site functioning are always on 
           </p> 
           <div class="buttons"> 
-              <button class="consentButton"> 
+              <button class="consentButton" id="accept_cookies_btn"> 
                     Accept Cookies 
                 </button> 
-              <button class="rejectButton"> 
+              <button class="rejectButton"  id="reject_cookies_btn"> 
                     Reject 
                 </button> 
           </div> 
