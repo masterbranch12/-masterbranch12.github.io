@@ -34,16 +34,9 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   transition: 150ms;
-    margin: 0;
-    overflow: hidden;
-    height: 100%;
+
 }
-body {
-      margin: 0;
-    overflow: auto;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-}
+
 
 p {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
